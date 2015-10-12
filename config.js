@@ -47,7 +47,7 @@ exports.getConfig = function () {
                          * - if it contains numbers, it will most likely contain some
                         * */
                         FirstName: "Stanley",
-                        SurName: "Bonnett",
+                        SurName: "Bourneigh",
                         /* String matching common e-mail pattern.
                          * Scoundrel will return randomly generated e-mails matching e-mail pattern for this field
                          * E-mails are generated all small letters, no numbers in it
@@ -70,7 +70,7 @@ exports.getConfig = function () {
                         Interests: [
                             1,
                             2.23,
-                            'porno',
+                            'movies',
                             /* object inside array works */
                             {
                                 interestKind: 0
