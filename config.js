@@ -23,7 +23,7 @@ exports.getConfig = function () {
                 /* Set the data you want to have in response */
                 responseData: {
                     /* number of model entities returned in array */
-                    entityCount: 3,
+                    entityCount: 5,
                     /* if set to true, Scoundrel will modify the fields on each entity object
                      * and return non-uniform data. Otherwise all returned entities will look alike
                      * if set to 0, a valid empty JSON object or array will be returned */

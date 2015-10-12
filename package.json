@@ -19,8 +19,11 @@
   ],
   "license": "MIT",
   "dependencies": {
-
   },
   "devDependencies": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pehu71/scoundrel.git"
   }
 }
