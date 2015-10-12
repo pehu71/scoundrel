@@ -1,0 +1,26 @@
+{
+  "name": "scoundrel",
+  "version": "0.1.1",
+  "description": "This is a true fake server",
+  "author": "Petr Humplik <humplikpetr@gmail.com>",
+  "preferGlobal": true,
+  "bin": {
+    "scoundrel": "bin/scoundrel"
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "server",
+    "mock"
+  ],
+  "license": "MIT",
+  "dependencies": {
+
+  },
+  "devDependencies": {
+  }
+}
