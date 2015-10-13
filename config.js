@@ -30,14 +30,15 @@ exports.getConfig = function () {
                     modifyRandomly: true,
                     /* If set to true, the entity will be returned in array even if there is none or just one */
                     alwaysReturnArray: true,
+                    /* If true, Scoundrel tries to generate random data "as similar as possible" (a bit slower) */
+                    highFidelity: true,
                     /* the sample data model
-                     * Scoundrel will try to mimic it.
-                     * */
+                     * Scoundrel will try to mimic it. */
                     dataModel: {
                         /* If you put integer number somewhere, Scoundrel will use same number of digits and preserve integer type */
                         CustomerId: 1756,
                         /* If you put float number somewhere, Scoundrel will try to mimic the float number and preserve float type */
-                        PenisLength: 3.25,
+                        Height: 3.25,
                         /* Any string field - Scoundrel will return 'ugly' randomly generated string.
                         * Scoundrel tries to mimic case of the string, so:
                          * - if the string is in all small letters, the random generated will be in all small
@@ -62,7 +63,7 @@ exports.getConfig = function () {
                         * the same as stated above for primitive types
                         * */
                         Contract: {
-                            Type: "CDN123",
+                            Type: "CDN 123",
                             Length: 3,
                             Discount: 0.15
                         },
@@ -77,7 +78,7 @@ exports.getConfig = function () {
                             },
                             /* array inside array works as well */
                             [
-                                'cc', 'aa', 'bb'
+                                '$ 125.6', '150 CZK', '15 m'
                             ]
                         ]
                     }

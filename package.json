@@ -15,7 +15,9 @@
   },
   "keywords": [
     "server",
-    "mock"
+    "mock",
+    "http",
+    "json"
   ],
   "license": "MIT",
   "dependencies": {
