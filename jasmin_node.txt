@@ -1,1 +1,0 @@
-"c:\program files\nodejs\node.exe" c:\Users\pehu\AppData\Roaming\npm\node_modules\jasmine-node\bin\jasmine-node spec/indexSpec.js
