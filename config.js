@@ -30,8 +30,6 @@ exports.getConfig = function () {
                     modifyRandomly: true,
                     /* If set to true, the entity will be returned in array even if there is none or just one */
                     alwaysReturnArray: true,
-                    /* If true, Scoundrel tries to generate random data "as similar as possible" (a bit slower) */
-                    highFidelity: true,
                     /* the sample data model
                      * Scoundrel will try to mimic it. */
                     dataModel: {
