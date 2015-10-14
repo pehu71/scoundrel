@@ -9,14 +9,10 @@ You can simply make him return status codes and responses which satisfy your nee
 
 Scoundrel is *not intended for JavaScript unit testing* but can be used in some way of *integration testing*.
 
-There is a possibility to run it from command line without GUI based on the `configuration script`
-
 ## So how it works?
 
-Let us imagine a simple case: 
-you are itching to start polishing your new AngularJS driven front-end, but you do not want to mess with some back-end
-controller to get first results. You are thinking about having some pretty valid JSON with some *customer entities*
-to show them in some grid component. And you want a lot of them, let's say 1000.
+*Let us imagine a simple case:* 
+You are itching to start polishing your new AngularJS driven front-end, but you do not want to mess with some back-end controller to get first results. You are thinking about having some pretty valid JSON with some *customer entities* to show them in some grid component. And you want a lot of them, let's say 1000.
 
 So just install Scoundrel, go to the config file (one which is richly commented can be found in [docs/configuration](docs/configuration.md)) and define a route:
 
@@ -63,9 +59,7 @@ entityCount: 1000,
 modifyRandomly: true,
 ````
 
-Scoundrel will try to *mimic* your data structure, or just repeat them (depends on `modifyRandomly`). If it is in its
-random mode, it tries to infer several types and patterns: tries to guess what is an e-mail address, phone number, what is
-an integer or float number and so on. Then it generates random data with corresponding types and patterns.
+Scoundrel will try to *mimic* your data structure, or just repeat them (depends on `modifyRandomly`). If it is in its random mode, it tries to infer several types and patterns: tries to guess what is an e-mail address, phone number, what is an integer or float number and so on. Then it generates random data with corresponding types and patterns.
 
 Then just query the server, and you'll get it back.
 
@@ -83,8 +77,7 @@ For configuration details see [docs/configuration](docs/configuration.md).
 
 ## Command line usage
 
-Scoundrel has pretty simple command line use, it doesn't allow any combination of command line arguments, since it makes no sense
-in this case. You can just ask for help, version information, or simply run it with configuration javascript file as an argument.
+Scoundrel has pretty simple command line usage, it doesn't allow any combination of command line arguments, since it makes no sense in this case. You can just ask for help, version information, or simply run it with configuration javascript file as an argument.
 If you pass no argument, you'll achieve short help in response.
 
 #### Getting version info
@@ -110,11 +103,10 @@ If there is a need for it, specify either full path to this file, or just the fi
 scoundrel config.js
 ```
 
-*Option 2* - specifying full path (winn32)
+*Option 2* - specifying full path (win32)
 
 ```bash
 scoundrel c:\mydir\its_subdir\config.js
 ```
 
-[npm]: http://karma-runner.github.com
 [Scoundrel]: https://github.com/pehu71/scoundrel
