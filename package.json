@@ -18,7 +18,8 @@
     "mock",
     "http",
     "json",
-    "integration tests"
+    "integration tests",
+    "front-end"
   ],
   "license": "MIT",
   "dependencies": {
