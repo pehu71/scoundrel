@@ -81,6 +81,13 @@ exports.getConfig = function () {
                         ]
                     }
                 }
+            },
+            /* route returning a predefined string instead of JSON */
+            {
+                pathPattern: "/static/string",
+                method: "GET",
+                requiredStatus: 200,
+                responseString: '<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs" lang="cs"><head><title>Some Page</title></head><body></body></html>'
             }
         ]
     }
