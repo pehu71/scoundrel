@@ -17,10 +17,14 @@ exports.getConfig = function () {
                 /* Supported statuses required from Scoundrel in response:
                  * 200, 206, 301, 302, 304, 307 - Scoundrel will return required data model - see below along with
                  * required status code and status message in headers
-                 * 400, 401, 403, 404, 408, 500, 502, 503 - Scoundrel will return apropriate status code and message
+                 * 400, 401, 403, 404, 408, 500, 502, 503 - Scoundrel will return appropriate status code and message
                  * and empty response
                  * */
                 requiredStatus: 200,
+                /* OPTIONAL - you can set the delay of the response in milliseconds. Good for testing your "wait/progress" logic
+                * If omitted no delay will be used
+                * */
+                delay: 0,
                 /* Set the data you want to have in response */
                 responseData: {
                     /* number of model entities returned in array */
@@ -88,6 +92,7 @@ exports.getConfig = function () {
                 pathPattern: "/static/string",
                 method: "GET",
                 requiredStatus: 200,
+                delay: 5000,
                 responseString: '<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs" lang="cs"><head><title>Some Page</title></head><body></body></html>'
             }
         ]

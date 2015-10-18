@@ -7,6 +7,7 @@ exports.getConfig = function () {
             {
                 /* The path will be resolved against regular expression. If no match,
                  * Scoundrel will return status of 500 along with JSON object containing message 'path not matched'
+                 * The pathPattern must begin with a slash
                  * */
                 pathPattern: "/customers/list",
                 /* The method will be matched. If no match, Scoundrel will return status of 500
@@ -16,10 +17,14 @@ exports.getConfig = function () {
                 /* Supported statuses required from Scoundrel in response:
                  * 200, 206, 301, 302, 304, 307 - Scoundrel will return required data model - see below along with
                  * required status code and status message in headers
-                 * 400, 401, 403, 404, 408, 500, 502, 503 - Scoundrel will return apropriate status code and message
+                 * 400, 401, 403, 404, 408, 500, 502, 503 - Scoundrel will return appropriate status code and message
                  * and empty response
                  * */
                 requiredStatus: 200,
+                /* OPTIONAL - you can set the delay of the response in milliseconds. Good for testing your "wait/progress" logic
+                * If omitted no delay will be used
+                * */
+                delay: 0,
                 /* Set the data you want to have in response */
                 responseData: {
                     /* number of model entities returned in array */
@@ -82,12 +87,41 @@ exports.getConfig = function () {
                     }
                 }
             },
-            /* route returning a predefined string instead of JSON */
+            /* route returning a predefined STRING instead of JSON */
             {
+                /* The pathPattern must begin with a slash */
                 pathPattern: "/static/string",
                 method: "GET",
                 requiredStatus: 200,
+                delay: 0,
                 responseString: '<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs" lang="cs"><head><title>Some Page</title></head><body></body></html>'
+            },
+            /* routes with static file content. Supported types:
+             * - htm, html,
+              * - png,
+              * - jpg, jpeg
+              * */
+            /* route returning static resource saved on disk as a FILE - HTML*/
+            {
+                /* The pathPattern must begin with a slash */
+                pathPattern: "/static/static-example",
+                method: "GET",
+                requiredStatus: 200,
+                delay: 0,
+                /* it can be relative path without beginning slash (the base is Scoundrel root)
+                *  it can absolute path
+                *  NOTE: both relative and absolute paths are absolutely independent on "pathPattern"
+                *  */
+                fileName: 'static/example.html'
+            },
+            /* route returning static resource saved on disk as a FILE - PNG */
+            {
+                /* The pathPattern must begin with a slash */
+                pathPattern: "/static/node-png",
+                method: "GET",
+                requiredStatus: 200,
+                delay: 0,
+                fileName: 'static/node.png'
             }
         ]
     }
