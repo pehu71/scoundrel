@@ -8,6 +8,7 @@ exports.getConfig = function () {
             {
                 /* The path will be resolved against regular expression. If no match,
                  * Scoundrel will return status of 500 along with JSON object containing message 'path not matched'
+                 * The pathPattern must begin with a slash
                  * */
                 pathPattern: "/customers/list",
                 /* The method will be matched. If no match, Scoundrel will return status of 500
@@ -87,13 +88,41 @@ exports.getConfig = function () {
                     }
                 }
             },
-            /* route returning a predefined string instead of JSON */
+            /* route returning a predefined STRING instead of JSON */
             {
+                /* The pathPattern must begin with a slash */
                 pathPattern: "/static/string",
                 method: "GET",
                 requiredStatus: 200,
-                delay: 5000,
+                delay: 0,
                 responseString: '<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs" lang="cs"><head><title>Some Page</title></head><body></body></html>'
+            },
+            /* routes with static file content. Supported types:
+             * - htm, html,
+              * - png,
+              * - jpg, jpeg
+              * */
+            /* route returning static resource saved on disk as a FILE - HTML*/
+            {
+                /* The pathPattern must begin with a slash */
+                pathPattern: "/static/static-example",
+                method: "GET",
+                requiredStatus: 200,
+                delay: 0,
+                /* it can be relative path without beginning slash (the base is Scoundrel root)
+                *  it can absolute path
+                *  NOTE: both relative and absolute paths are absolutely independent on "pathPattern"
+                *  */
+                fileName: 'static/example.html'
+            },
+            /* route returning static resource saved on disk as a FILE - PNG */
+            {
+                /* The pathPattern must begin with a slash */
+                pathPattern: "/static/jawa",
+                method: "GET",
+                requiredStatus: 200,
+                delay: 0,
+                fileName: 'static/jawa.jpg'
             }
         ]
     }

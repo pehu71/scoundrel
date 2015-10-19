@@ -117,11 +117,11 @@ exports.getConfig = function () {
             /* route returning static resource saved on disk as a FILE - PNG */
             {
                 /* The pathPattern must begin with a slash */
-                pathPattern: "/static/node-png",
+                pathPattern: "/static/jawa",
                 method: "GET",
                 requiredStatus: 200,
                 delay: 0,
-                fileName: 'static/node.png'
+                fileName: 'static/jawa.jpg'
             }
         ]
     }
