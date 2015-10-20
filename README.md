@@ -78,7 +78,6 @@ For configuration details see [docs/configuration](docs/configuration.md).
 ## Command line usage
 
 Scoundrel has pretty simple command line usage, it doesn't allow any combination of command line arguments, since it makes no sense in this case. You can just ask for help, version information, or simply run it with configuration javascript file as an argument.
-If you pass no argument, you'll achieve short help in response.
 
 #### Getting version info
 
@@ -95,18 +94,45 @@ scoundrel --help
 #### Running Scoundrel
 
 Just type scoundrel and the name of your configuration file. For configuration file details see [docs/configuration](docs/configuration.md).
-If there is a need for it, specify either full path to this file, or just the file name, if the file resides in scoundrel directory:
+If there is a need for it, specify either full path to this file, or just the file name, if the file resides in scoundrel directory.
+
+>If you pass no argument, Scoundrel will run with default configuration file **config.js** which should be in its root directory after installation. This is the commented one.
 
 *Option 1* - specifying file name only, when the config file resides in scoundrel directory
 
 ```bash
-scoundrel config.js
+scoundrel config-ex.js
 ```
 
 *Option 2* - specifying full path (win32)
 
 ```bash
-scoundrel c:\mydir\its_subdir\config.js
+scoundrel c:\mydir\its_subdir\some-other-config.js
 ```
+
+#### Using Scoundrel as a module
+
+You can make Scoundrel run from your code by simply adding these two lines of code:
+
+````javascript
+var scoundrel = require('scoundrel');
+scoundrel.run();
+```` 
+In this case the configuration file is always the file named **config.js** which is placed in the root scoundrel module directory. There is one shipped with this package. 
+
+When you want to stop the server from your code, just call its `stop()` method like this:
+
+````javascript
+scoundrel.stop();
+````
+
+You can even pass a callback method to execute when the server is stopped by calling its `stop(callback)` method. This can be easily done by following snippet:
+
+````javascript
+var onStopCallback = function () {
+    console.log('Scoundrel stopped...');
+};   
+scoundrel.stop(onStopCallback);
+````
 
 [Scoundrel]: https://github.com/pehu71/scoundrel
