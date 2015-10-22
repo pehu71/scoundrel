@@ -1,0 +1,32 @@
+[
+  {
+    "Model": "Fiesta",
+    "Manufacturer": "Ford",
+    "YearOfProduction": 2004,
+    "Color": "Navy Blue"
+  },
+  {
+    "Model": "Felicia",
+    "Manufacturer": "Skoda",
+    "YearOfProduction": 2000,
+    "Color": "Silver"
+  },
+  {
+    "Model": "Escort",
+    "Manufacturer": "Ford",
+    "YearOfProduction": 1998,
+    "Color": "Wine Red"
+  },
+  {
+    "Model": "Uno 60 s",
+    "Manufacturer": "Fiat",
+    "YearOfProduction": 1997,
+    "Color": "Blue"
+  },
+  {
+    "Model": "19",
+    "Manufacturer": "Renault",
+    "YearOfProduction": 1996,
+    "Color": "Dark Silver"
+  }
+]

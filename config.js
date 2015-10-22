@@ -22,8 +22,8 @@ exports.getConfig = function () {
                  * */
                 requiredStatus: 200,
                 /* OPTIONAL - you can set the delay of the response in milliseconds. Good for testing your "wait/progress" logic
-                * If omitted no delay will be used
-                * */
+                 * If omitted no delay will be used
+                 * */
                 delay: 0,
                 /* Set the data you want to have in response */
                 responseData: {
@@ -43,13 +43,13 @@ exports.getConfig = function () {
                         /* If you put float number somewhere, Scoundrel will try to mimic the float number and preserve float type */
                         Height: 3.25,
                         /* Any string field - Scoundrel will return 'ugly' randomly generated string.
-                        * Scoundrel tries to mimic case of the string, so:
+                         * Scoundrel tries to mimic case of the string, so:
                          * - if the string is in all small letters, the random generated will be in all small
-                        *  - if it's all big, it will be generated all big
-                        *  - if the first letter is big and the rest small, the generated string will look alike
+                         *  - if it's all big, it will be generated all big
+                         *  - if the first letter is big and the rest small, the generated string will look alike
                          * - if the string consists of letters only, will stay letters only
                          * - if it contains numbers, it will most likely contain some
-                        * */
+                         * */
                         FirstName: "Stanley",
                         SurName: "Bourneigh",
                         /* String matching common e-mail pattern.
@@ -63,8 +63,8 @@ exports.getConfig = function () {
                          * */
                         Phone: "(541) 754-3011",
                         /* You can put a nested object of course. The rules for mimicking particular fields are still
-                        * the same as stated above for primitive types
-                        * */
+                         * the same as stated above for primitive types
+                         * */
                         Contract: {
                             Type: "CDN 123",
                             Length: 3,
@@ -87,7 +87,7 @@ exports.getConfig = function () {
                     }
                 }
             },
-            /* route returning a predefined STRING instead of JSON */
+            /* route returning a STRING */
             {
                 /* The pathPattern must begin with a slash */
                 pathPattern: "/static/string",
@@ -98,25 +98,32 @@ exports.getConfig = function () {
             },
             /* routes with static file content. Supported types:
              * - htm, html,
-              * - png,
-              * - jpg, jpeg
-              * */
-            /* route returning static resource saved on disk as a FILE - HTML*/
+             * - json
+             * - png,
+             * - jpg, jpeg
+             * */
+            /* route returning external JSON file */
             {
                 /* The pathPattern must begin with a slash */
+                pathPattern: "/static/json-example",
+                method: "GET",
+                requiredStatus: 200,
+                delay: 0,
+                /*  fileName can be relative path without beginning slash (the base is Scoundrel root)
+                 *  fileName can absolute path
+                 *  NOTE: both relative and absolute paths are absolutely independent on "pathPattern" */
+                fileName: 'static/cars.json'
+            },
+            /* route returning content of an external HTML file */
+            {
                 pathPattern: "/static/static-example",
                 method: "GET",
                 requiredStatus: 200,
                 delay: 0,
-                /* it can be relative path without beginning slash (the base is Scoundrel root)
-                *  it can absolute path
-                *  NOTE: both relative and absolute paths are absolutely independent on "pathPattern"
-                *  */
                 fileName: 'static/example.html'
             },
-            /* route returning static resource saved on disk as a FILE - PNG */
+            /* route returning content of an external JPG file */
             {
-                /* The pathPattern must begin with a slash */
                 pathPattern: "/static/jawa",
                 method: "GET",
                 requiredStatus: 200,

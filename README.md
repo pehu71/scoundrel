@@ -23,7 +23,7 @@ pathPattern: "/customers/list",
 method: "GET"
 ````
 
-*Show scoundrel the **sample** of your data entity, like this:*
+Show scoundrel the **sample** of your data entity, like this:
 
 ````javascript
                     dataModel: {
